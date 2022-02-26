@@ -1,0 +1,41 @@
+@import './variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+header {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 12% 69px auto auto 6%;
+  align-items: center;
+
+  img {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    width: 69px;
+    grid-column: 2/3;
+  }
+
+  nav {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    vertical-align: middle;
+    grid-column: 4/5;
+    justify-self: end;
+
+    ul {
+      display: inline-flex;
+      text-align: center;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        display: table-cell;
+        color: $primaryText;
+        font-size: 19px;
+        cursor: pointer;
+      }
+    }
+  }
+}

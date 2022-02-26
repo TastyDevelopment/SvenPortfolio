@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+header {
+  position: relative;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 12% 69px auto auto 6%;
+      grid-template-columns: 12% 69px auto auto 6%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header img {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  width: 69px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+header nav {
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  vertical-align: middle;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4/5;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+header nav ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-align: center;
+  gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav ul li {
+  display: table-cell;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: Bahnschrift;
+  src: url("../font/BAHNSCHRIFT.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: OldSans;
+  src: url("../font/OldSansBlack.ttf") format("truetype");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.front-page {
+  position: relative;
+  top: 70px;
+  left: 20px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.front-page .picture-on-front img {
+  width: 568px;
+}
+
+.front-page .text-on-front {
+  color: white;
+  font-family: Bahnschrift;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70px 40px 180px auto;
+      grid-template-rows: 70px 40px 180px auto;
+}
+
+.front-page .text-on-front .front-header {
+  font-size: 24px;
+  color: #fb4444;
+}
+
+.front-page .text-on-front .front-subheader h1 {
+  font-size: 37px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.front-page .text-on-front .front-content {
+  font-size: 17px;
+  opacity: 76%;
+  white-space: pre-line;
+}
+
+.front-page .text-on-front .front-button {
+  display: block;
+  height: 100%;
+}
+
+.front-page .text-on-front .front-button .button {
+  -webkit-font-smoothing: antialiased;
+  background-color: #fb4444;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 100;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  letter-spacing: 1px;
+  color: white;
+  padding: 25px 50px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  border-radius: 50px;
+}
+
+.front-page .text-on-front .front-button .button:hover {
+  background-color: #ff3535;
+  color: #fff;
+}
+
+.front-page .text-on-front .front-button .button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.front-page .text-on-front .front-button .button--bubble {
+  position: relative;
+  z-index: 2;
+  color: white;
+  background: none;
+}
+
+.front-page .text-on-front .front-button .button--bubble:hover {
+  background: none;
+}
+
+.front-page .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .circle {
+  background: #e80000;
+}
+
+.front-page .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .button {
+  background: #e80000;
+}
+
+.front-page .text-on-front .front-button .button--bubble:active + .button--bubble__effect-container {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.front-page .text-on-front .front-button .button--bubble__container {
+  position: relative;
+  display: inline-block;
+}
+
+.front-page .text-on-front .front-button .button--bubble__container .effect-button {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+  left: 25%;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #fb4444;
+  -webkit-transition: background 0.1s ease-out;
+  transition: background 0.1s ease-out;
+}
+
+.front-page .text-on-front .front-button .button--bubble__effect-container {
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 400%;
+  top: -150%;
+  left: -50%;
+  -webkit-filter: url("#goo");
+  filter: url("#goo");
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+.front-page .text-on-front .front-button .button--bubble__effect-container .circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #fb4444;
+  -webkit-transition: background 0.1s ease-out;
+  transition: background 0.1s ease-out;
+}
+
+.front-page .text-on-front .front-button .button--bubble__effect-container .circle.top-left {
+  top: 40%;
+  left: 27%;
+}
+
+.front-page .text-on-front .front-button .button--bubble__effect-container .circle.bottom-right {
+  bottom: 40%;
+  right: 27%;
+}
+
+.front-page .text-on-front .front-button .goo {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.front-page .text-on-front .front-button html,
+.front-page .text-on-front .front-button body {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.front-page .text-on-front .front-button .button--bubble__container {
+  top: 50%;
+  margin-top: -25px;
+}
+
+@-webkit-keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: Bahnschrift;
+  src: url("../font/BAHNSCHRIFT.TTF") format("truetype");
+}
+
+footer {
+  font-family: Bahnschrift;
+  position: relative;
+  top: 300px;
+  height: 250px;
+  border-top: 2px solid white;
+  width: 100%;
+}
+
+footer .footer-content {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 30% 30%;
+      grid-template-columns: 30% 30% 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer-content div {
+  place-self: center;
+}
+
+footer .footer-content .footer-legal {
+  line-height: 2;
+}
+
+footer .footer-content .footer-legal a {
+  color: white;
+  font-weight: 200;
+}
+
+footer .footer-content .footer-logo {
+  font-weight: 900;
+  font-size: 90px;
+}
+
+html,
+body {
+  left: 0;
+  width: 100%;
+}
+
+body {
+  background: #1a1a1a;
+  overflow-x: hidden;
+  height: 1000px;
+}
+
+.button-transparent {
+  border: 4px solid white;
+  border-radius: 50px;
+  padding: 14px;
+  padding-left: 37px;
+  padding-right: 37px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.button-transparent:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: white;
+  color: #1a1a1a;
+}
+/*# sourceMappingURL=style.css.map */
