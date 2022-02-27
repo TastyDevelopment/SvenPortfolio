@@ -31,6 +31,7 @@ header {
       justify-content: center;
 
       li {
+        position: relative;
         display: table-cell;
         color: $primaryText;
         font-size: 19px;
@@ -39,3 +40,19 @@ header {
     }
   }
 }
+
+.underlineHover:after {
+  content:  "";
+  position:  absolute;
+  background-color:  #ff3c78;
+  height: 3px;
+  width:  0;
+  left: 0;
+  bottom:  -4px;
+  transition: 0.3s;
+}
+
+.underlineHover:hover:after{
+  width: 110%;
+}
+

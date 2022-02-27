@@ -46,10 +46,27 @@ header nav ul {
 }
 
 header nav ul li {
+  position: relative;
   display: table-cell;
   color: white;
   font-size: 19px;
   cursor: pointer;
+}
+
+.underlineHover:after {
+  content: "";
+  position: absolute;
+  background-color: #ff3c78;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -4px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.underlineHover:hover:after {
+  width: 110%;
 }
 
 @font-face {
