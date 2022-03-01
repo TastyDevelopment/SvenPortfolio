@@ -53,8 +53,8 @@ header nav ul li {
   cursor: pointer;
 }
 
-.underlineHover:after {
-  content: "";
+header nav ul .underlineHover ::after {
+  content: '';
   position: absolute;
   background-color: #ff3c78;
   height: 3px;
@@ -65,8 +65,8 @@ header nav ul li {
   transition: 0.3s;
 }
 
-.underlineHover:hover:after {
-  width: 110%;
+header nav ul .underlineHover :hover::after {
+  width: calc(100% + 20px);
 }
 
 @font-face {
@@ -84,9 +84,33 @@ header nav ul li {
           box-sizing: border-box;
 }
 
-.front-page {
+section {
+  min-height: 100vh;
+}
+
+.text-on-front {
+  color: white;
+  font-family: Bahnschrift;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70px 40px 180px auto;
+      grid-template-rows: 70px 40px 180px auto;
+}
+
+.subheader h1 {
+  font-size: 37px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.content {
+  font-size: 17px;
+  opacity: 76%;
+  white-space: pre-line;
+}
+
+.sec-introduction .container-introduction {
   position: relative;
-  top: 70px;
+  top: 50px;
   left: 20px;
   display: -ms-grid;
   display: grid;
@@ -102,41 +126,21 @@ header nav ul li {
           justify-content: center;
 }
 
-.front-page .picture-on-front img {
+.sec-introduction .container-introduction .picture-on-front img {
   width: 568px;
 }
 
-.front-page .text-on-front {
-  color: white;
-  font-family: Bahnschrift;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 70px 40px 180px auto;
-      grid-template-rows: 70px 40px 180px auto;
-}
-
-.front-page .text-on-front .front-header {
+.sec-introduction .container-introduction .text-on-front .front-header {
   font-size: 24px;
   color: #fb4444;
 }
 
-.front-page .text-on-front .front-subheader h1 {
-  font-size: 37px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.front-page .text-on-front .front-content {
-  font-size: 17px;
-  opacity: 76%;
-  white-space: pre-line;
-}
-
-.front-page .text-on-front .front-button {
+.sec-introduction .container-introduction .text-on-front .front-button {
   display: block;
   height: 100%;
 }
 
-.front-page .text-on-front .front-button .button {
+.sec-introduction .container-introduction .text-on-front .front-button .button {
   -webkit-font-smoothing: antialiased;
   background-color: #fb4444;
   border: none;
@@ -158,46 +162,46 @@ header nav ul li {
   border-radius: 50px;
 }
 
-.front-page .text-on-front .front-button .button:hover {
+.sec-introduction .container-introduction .text-on-front .front-button .button:hover {
   background-color: #ff3535;
   color: #fff;
 }
 
-.front-page .text-on-front .front-button .button:active {
+.sec-introduction .container-introduction .text-on-front .front-button .button:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-.front-page .text-on-front .front-button .button--bubble {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble {
   position: relative;
   z-index: 2;
   color: white;
   background: none;
 }
 
-.front-page .text-on-front .front-button .button--bubble:hover {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble:hover {
   background: none;
 }
 
-.front-page .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .circle {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .circle {
   background: #e80000;
 }
 
-.front-page .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .button {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble:hover + .button--bubble__effect-container .button {
   background: #e80000;
 }
 
-.front-page .text-on-front .front-button .button--bubble:active + .button--bubble__effect-container {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble:active + .button--bubble__effect-container {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-.front-page .text-on-front .front-button .button--bubble__container {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__container {
   position: relative;
   display: inline-block;
 }
 
-.front-page .text-on-front .front-button .button--bubble__container .effect-button {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__container .effect-button {
   position: absolute;
   width: 50%;
   height: 25%;
@@ -211,7 +215,7 @@ header nav ul li {
   transition: background 0.1s ease-out;
 }
 
-.front-page .text-on-front .front-button .button--bubble__effect-container {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__effect-container {
   position: absolute;
   display: block;
   width: 200%;
@@ -225,7 +229,7 @@ header nav ul li {
   pointer-events: none;
 }
 
-.front-page .text-on-front .front-button .button--bubble__effect-container .circle {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__effect-container .circle {
   position: absolute;
   width: 25px;
   height: 25px;
@@ -235,31 +239,31 @@ header nav ul li {
   transition: background 0.1s ease-out;
 }
 
-.front-page .text-on-front .front-button .button--bubble__effect-container .circle.top-left {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__effect-container .circle.top-left {
   top: 40%;
   left: 27%;
 }
 
-.front-page .text-on-front .front-button .button--bubble__effect-container .circle.bottom-right {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__effect-container .circle.bottom-right {
   bottom: 40%;
   right: 27%;
 }
 
-.front-page .text-on-front .front-button .goo {
+.sec-introduction .container-introduction .text-on-front .front-button .goo {
   position: absolute;
   visibility: hidden;
   width: 1px;
   height: 1px;
 }
 
-.front-page .text-on-front .front-button html,
-.front-page .text-on-front .front-button body {
+.sec-introduction .container-introduction .text-on-front .front-button html,
+.sec-introduction .container-introduction .text-on-front .front-button body {
   width: 100%;
   height: 100%;
   text-align: center;
 }
 
-.front-page .text-on-front .front-button .button--bubble__container {
+.sec-introduction .container-introduction .text-on-front .front-button .button--bubble__container {
   top: 50%;
   margin-top: -25px;
 }
@@ -292,6 +296,98 @@ header nav ul li {
     -ms-filter: hue-rotate(360deg);
     filter: hue-rotate(360deg);
   }
+}
+
+.container-photoshop {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-photoshop img {
+  height: 756px;
+}
+
+.container-photoshop .front-button {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+}
+
+.container-photoshop .front-button a {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-decoration: none;
+}
+
+.container-photoshopSkills {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  top: 50px;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  row-gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+.container-photoshopSkills .container-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 380px 380px 380px;
+      grid-template-columns: 380px 380px 380px;
+  -ms-grid-rows: 250px 250px;
+      grid-template-rows: 250px 250px;
+  row-gap: 20px;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+}
+
+.container-photoshopSkills .container-cards .skill-card {
+  position: relative;
+  width: 380px;
+  height: 250px;
+  padding: 30px;
+  border: 4px solid #0c0c0c;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.container-photoshopSkills .container-cards .skill-card h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.container-photoshopSkills .container-cards .skill-card p {
+  font-size: 13px;
+}
+
+.container-photoshopSkills .container-cards .skill-card a {
+  position: absolute;
+  font-size: 13px;
+  color: #fb4444;
+  text-decoration: none;
+  bottom: 40px;
 }
 
 @font-face {

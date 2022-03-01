@@ -14,183 +14,264 @@
   box-sizing: border-box;
 }
 
-.front-page {
+section {
+  min-height: 100vh;
+}
+
+.text-on-front {
+  color: $primaryText;
+  font-family: Bahnschrift;
+  display: grid;
+  grid-template-rows: 70px 40px 180px auto;
+}
+
+.subheader {
+  h1 {
+    font-size: 37px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+}
+
+.content {
+  font-size: 17px;
+  opacity: 76%;
+  white-space: pre-line;
+}
+
+.sec-introduction {
+  .container-introduction {
+    position: relative;
+    top: 50px;
+    left: 20px;
+    display: grid;
+    column-gap: 5%;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+
+    .picture-on-front {
+      img {
+        width: 568px;
+      }
+    }
+
+    .text-on-front {
+      .front-header {
+        font-size: 24px;
+        color: $primaryAccent;
+      }
+
+      $action-color: $secondaryAccent;
+
+      .front-button {
+        display: block;
+        height: 100%;
+
+        .button {
+          -webkit-font-smoothing: antialiased;
+          background-color: $primaryAccent;
+          border: none;
+          color: #fff;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 100;
+          text-decoration: none;
+          user-select: none;
+          letter-spacing: 1px;
+          color: white;
+          padding: 25px 50px;
+          text-transform: uppercase;
+          transition: all 0.1s ease-out;
+          border-radius: 50px;
+
+          &:hover {
+            background-color: $action-color;
+            color: #fff;
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+
+          &--bubble {
+            position: relative;
+            z-index: 2;
+            color: white;
+            background: none;
+
+            &:hover {
+              background: none;
+            }
+
+            &:hover + .button--bubble__effect-container .circle {
+              background: darken($action-color, 15%);
+            }
+
+            &:hover + .button--bubble__effect-container .button {
+              background: darken($action-color, 15%);
+            }
+
+            &:active + .button--bubble__effect-container {
+              transform: scale(0.95);
+            }
+
+            &__container {
+              position: relative;
+              display: inline-block;
+
+              .effect-button {
+                position: absolute;
+                width: 50%;
+                height: 25%;
+                top: 50%;
+                left: 25%;
+                z-index: 1;
+                transform: translateY(-50%);
+                background: $primaryAccent;
+                transition: background 0.1s ease-out;
+              }
+            }
+          }
+        }
+
+        .button--bubble__effect-container {
+          position: absolute;
+          display: block;
+          width: 200%;
+          height: 400%;
+          top: -150%;
+          left: -50%;
+          -webkit-filter: url('#goo');
+          filter: url('#goo');
+          transition: all 0.1s ease-out;
+          pointer-events: none;
+
+          .circle {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 15px;
+            background: $primaryAccent;
+            transition: background 0.1s ease-out;
+
+            &.top-left {
+              top: 40%;
+              left: 27%;
+            }
+
+            &.bottom-right {
+              bottom: 40%;
+              right: 27%;
+            }
+          }
+        }
+
+        .goo {
+          position: absolute;
+          visibility: hidden;
+          width: 1px;
+          height: 1px;
+        }
+
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+        }
+
+        .button--bubble__container {
+          top: 50%;
+          margin-top: -25px;
+        }
+
+        @keyframes hue-rotate {
+          from {
+            -webkit-filter: hue-rotate(0);
+            -moz-filter: hue-rotate(0);
+            -ms-filter: hue-rotate(0);
+            filter: hue-rotate(0);
+          }
+          to {
+            -webkit-filter: hue-rotate(360deg);
+            -moz-filter: hue-rotate(360deg);
+            -ms-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-photoshop {
   position: relative;
-  top: 70px;
-  left: 20px;
   display: grid;
   column-gap: 5%;
   grid-template-columns: auto auto;
   align-items: center;
   justify-content: center;
 
-  .picture-on-front {
-    img {
-      width: 568px;
-    }
+  img {
+    height: 756px;
   }
 
-  .text-on-front {
-    color: $primaryText;
-    font-family: Bahnschrift;
+  .front-button {
+    grid-row: 4/5;
+
+    a {
+      background: $primaryText;
+      border-radius: 10px;
+      padding: 18px;
+      padding-left: 50px;
+      padding-right: 50px;
+      text-decoration: none;
+    }
+  }
+}
+
+.container-photoshopSkills {
+  position: relative;
+  display: grid;
+  top: 50px;
+  grid-template-rows: auto auto;
+  row-gap: 100px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: $primaryText;
+
+  .container-cards {
     display: grid;
-    grid-template-rows: 70px 40px 180px auto;
+    grid-template-columns: 380px 380px 380px;
+    grid-template-rows: 250px 250px;
+    row-gap: 20px;
+    column-gap: 25px;
 
-    .front-header {
-      font-size: 24px;
-      color: $primaryAccent;
-    }
+    .skill-card {
+      position: relative;
+      width: 380px;
+      height: 250px;
+      padding: 30px;
+      border: 4px solid #0c0c0c;
+      border-radius: 15px;
+      text-align: left;
 
-    .front-subheader {
-      h1 {
-        font-size: 37px;
-        font-family: 'Times New Roman', Times, serif;
+      h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
       }
-    }
 
-    .front-content {
-      font-size: 17px;
-      opacity: 76%;
-      white-space: pre-line;
-    }
+      p {
+        font-size: 13px;
+      }
 
-    $action-color: $secondaryAccent;
-
-    .front-button {
-      display: block;
-      height: 100%;
-
-      .button {
-        -webkit-font-smoothing: antialiased;
-        background-color: $primaryAccent;
-        border: none;
-        color: #fff;
-        display: inline-block;
-        font-size: 14px;
-        font-weight: 100;
+      a {
+        position: absolute;
+        font-size: 13px;
+        color: $primaryAccent;
         text-decoration: none;
-        user-select: none;
-        letter-spacing: 1px;
-        color: white;
-        padding: 25px 50px;
-        text-transform: uppercase;
-        transition: all 0.1s ease-out;
-        border-radius: 50px;
-
-        &:hover {
-          background-color: $action-color;
-          color: #fff;
-        }
-
-        &:active {
-          transform: scale(0.95);
-        }
-
-        &--bubble {
-          position: relative;
-          z-index: 2;
-          color: white;
-          background: none;
-
-          &:hover {
-            background: none;
-          }
-
-          &:hover + .button--bubble__effect-container .circle {
-            background: darken($action-color, 15%);
-          }
-
-          &:hover + .button--bubble__effect-container .button {
-            background: darken($action-color, 15%);
-          }
-
-          &:active + .button--bubble__effect-container {
-            transform: scale(0.95);
-          }
-
-          &__container {
-            position: relative;
-            display: inline-block;
-
-            .effect-button {
-              position: absolute;
-              width: 50%;
-              height: 25%;
-              top: 50%;
-              left: 25%;
-              z-index: 1;
-              transform: translateY(-50%);
-              background: $primaryAccent;
-              transition: background 0.1s ease-out;
-            }
-          }
-        }
-      }
-
-      .button--bubble__effect-container {
-        position: absolute;
-        display: block;
-        width: 200%;
-        height: 400%;
-        top: -150%;
-        left: -50%;
-        -webkit-filter: url('#goo');
-        filter: url('#goo');
-        transition: all 0.1s ease-out;
-        pointer-events: none;
-
-        .circle {
-          position: absolute;
-          width: 25px;
-          height: 25px;
-          border-radius: 15px;
-          background: $primaryAccent;
-          transition: background 0.1s ease-out;
-
-          &.top-left {
-            top: 40%;
-            left: 27%;
-          }
-
-          &.bottom-right {
-            bottom: 40%;
-            right: 27%;
-          }
-        }
-      }
-
-      .goo {
-        position: absolute;
-        visibility: hidden;
-        width: 1px;
-        height: 1px;
-      }
-
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-      }
-
-      .button--bubble__container {
-        top: 50%;
-        margin-top: -25px;
-      }
-
-      @keyframes hue-rotate {
-        from {
-          -webkit-filter: hue-rotate(0);
-          -moz-filter: hue-rotate(0);
-          -ms-filter: hue-rotate(0);
-          filter: hue-rotate(0);
-        }
-        to {
-          -webkit-filter: hue-rotate(360deg);
-          -moz-filter: hue-rotate(360deg);
-          -ms-filter: hue-rotate(360deg);
-          filter: hue-rotate(360deg);
-        }
+        bottom: 40px;
       }
     }
   }
